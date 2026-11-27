@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d"/>
+      <stop offset="50%" stop-color="#0d1b2a"/>
+      <stop offset="100%" stop-color="#1b263b"/>
+    </linearGradient>
+
+    <!-- Accent Title Gradient -->
+    <linearGradient id="titleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="40%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+
+    <!-- Pill Background Gradient -->
+    <linearGradient id="pillGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <!-- Glowing Orb Gradients -->
+    <radialGradient id="orbCyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbPurple" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Glow Filter -->
+    <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <style>
+      @keyframes pulseGrid {
+        0%, 100% { opacity: 0.12; }
+        50% { opacity: 0.28; }
+      }
+      @keyframes floatSlow1 {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-7px); }
+      }
+      @keyframes floatSlow2 {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(7px); }
+      }
+      @keyframes dashAnim {
+        0% { stroke-dashoffset: 240; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes pulseCircle {
+        0%, 100% { r: 5px; opacity: 0.5; }
+        50% { r: 8px; opacity: 0.95; }
+      }
+
+      .grid-lines {
+        animation: pulseGrid 6s ease-in-out infinite;
+      }
+      .flow-path {
+        stroke-dasharray: 8 6;
+        animation: dashAnim 12s linear infinite;
+      }
+      .pill-float-1 {
+        animation: floatSlow1 4s ease-in-out infinite;
+      }
+      .pill-float-2 {
+        animation: floatSlow2 4.5s ease-in-out 1s infinite;
+      }
+      .pulse-dot {
+        animation: pulseCircle 3s ease-in-out infinite;
+      }
+      .title-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+      }
+      .subtitle-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-weight: 500;
+      }
+      .badge-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        fill: #e2e8f0;
+      }
+    </style>
+  </defs>
+
+  <!-- Base Canvas -->
+  <rect width="1200" height="320" rx="16" fill="url(#bgGradient)"/>
+  <rect width="1200" height="320" rx="16" fill="none" stroke="#334155" stroke-width="1.5" stroke-opacity="0.6"/>
+
+  <!-- Background Ambient Glows -->
+  <circle cx="200" cy="80" r="180" fill="url(#orbCyan)"/>
+  <circle cx="1020" cy="240" r="220" fill="url(#orbPurple)"/>
+
+  <!-- Background Decorative Tech Grid -->
+  <g class="grid-lines" stroke="#38bdf8" stroke-width="0.8" opacity="0.18">
+    <line x1="100" y1="0" x2="100" y2="320"/>
+    <line x1="250" y1="0" x2="250" y2="320"/>
+    <line x1="400" y1="0" x2="400" y2="320"/>
+    <line x1="550" y1="0" x2="550" y2="320"/>
+    <line x1="700" y1="0" x2="700" y2="320"/>
+    <line x1="850" y1="0" x2="850" y2="320"/>
+    <line x1="1000" y1="0" x2="1000" y2="320"/>
+    <line x1="1150" y1="0" x2="1150" y2="320"/>
+
+    <line x1="0" y1="60" x2="1200" y2="60"/>
+    <line x1="0" y1="130" x2="1200" y2="130"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="270" x2="1200" y2="270"/>
+  </g>
+
+  <!-- Background Automation Data Flow Paths -->
+  <g fill="none" stroke="#818cf8" stroke-width="1.8" opacity="0.4" class="flow-path">
+    <path d="M 60 160 C 180 80, 240 240, 360 160"/>
+    <path d="M 840 160 C 960 90, 1040 230, 1140 150"/>
+  </g>
+
+  <!-- Flow Node Connectors with Pulsing Dots -->
+  <circle cx="360" cy="160" r="6" fill="#38bdf8" class="pulse-dot"/>
+  <circle cx="840" cy="160" r="6" fill="#c084fc" class="pulse-dot"/>
+
+  <!-- Foreground Title and Content (Clean & High Contrast) -->
+  <!-- Top Category Pill -->
+  <g class="pill-float-1">
+    <rect x="475" y="32" width="250" height="30" rx="15" fill="url(#pillGrad)" stroke="#38bdf8" stroke-width="1.2"/>
+    <circle cx="493" cy="47" r="4.5" fill="#38bdf8"/>
+    <text x="506" y="52" class="badge-text" fill="#38bdf8" font-size="12" letter-spacing="1.2">CURATED ECOSYSTEM 2026</text>
+  </g>
+
+  <!-- Main Banner Title -->
+  <text x="600" y="122" class="title-text" font-size="44" fill="#ffffff" text-anchor="middle" filter="url(#subtleGlow)">
+    Form Filling Automation &amp; Productivity
+  </text>
+  <text x="600" y="122" class="title-text" font-size="44" fill="url(#titleGradient)" text-anchor="middle">
+    Form Filling Automation &amp; Productivity
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="165" class="subtitle-text" font-size="18" fill="#94a3b8" text-anchor="middle" letter-spacing="0.4">
+    Autonomous Browser Agents • AI Autofill • Conversational Form Builders • Schema Generators
+  </text>
+
+  <!-- Dynamic Feature Badges / Pills Across Bottom -->
+  <g class="pill-float-1">
+    <!-- Pill 1: Browser Autofill -->
+    <g transform="translate(130, 218)">
+      <rect width="210" height="42" rx="21" fill="url(#pillGrad)" stroke="#38bdf8" stroke-width="1.2"/>
+      <text x="24" y="26" font-size="17">⚡</text>
+      <text x="50" y="26" class="badge-text">AI Form Autofill</text>
+    </g>
+
+    <!-- Pill 2: Browser Agents -->
+    <g transform="translate(365, 218)">
+      <rect width="220" height="42" rx="21" fill="url(#pillGrad)" stroke="#818cf8" stroke-width="1.2"/>
+      <text x="24" y="26" font-size="17">🤖</text>
+      <text x="50" y="26" class="badge-text">Autonomous Agents</text>
+    </g>
+  </g>
+
+  <g class="pill-float-2">
+    <!-- Pill 3: Self-Hosted Surveys -->
+    <g transform="translate(610, 218)">
+      <rect width="225" height="42" rx="21" fill="url(#pillGrad)" stroke="#a855f7" stroke-width="1.2"/>
+      <text x="24" y="26" font-size="17">📊</text>
+      <text x="50" y="26" class="badge-text">Self-Hosted Surveys</text>
+    </g>
+
+    <!-- Pill 4: JSON-Schema Engines -->
+    <g transform="translate(860, 218)">
+      <rect width="210" height="42" rx="21" fill="url(#pillGrad)" stroke="#ec4899" stroke-width="1.2"/>
+      <text x="24" y="26" font-size="17">🧩</text>
+      <text x="50" y="26" class="badge-text">Schema Form Engines</text>
+    </g>
+  </g>
+</svg>
